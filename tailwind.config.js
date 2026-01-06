@@ -7,13 +7,13 @@ export default {
         extend: {
             colors: {
                 'brand-purple': '#9b5de5', // titoli
-                'brand-blue': '#1e40af',    // testo principale blu scuro
+                'brand-blue': '#1e40af',    // testo principale 
             },
             fontFamily: {
-                'brand': ['Poppins', 'sans-serif'], // font personalizzato
+                'brand': ['Poppins', 'sans-serif'], 
             },
             spacing: {
-                '32': '8rem',  // p-32 / m-32 come esempio
+                '32': '8rem', 
             },
         },
     },
