@@ -7,34 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>es-tailwind</title>
   <link href="/src/index.css" rel="stylesheet">
-
-    <!--  colore personalizzato nella head -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'brand-purple': '#9b5de5'
-            }
-          }
-        }
-      }
-    </script>
 </head>
 
-<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-start p-8">
+<body class="bg-white min-h-screen flex flex-col items-center justify-start p-8 font-brand text-brand-blue">
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 
-  <h1 class="text-3xl font-bold underline text-center brand-purple mb-6">
-    ESERCIZIO NUMERO 1
+  <h1 class="text-3xl font-bold underline text-center text-brand-purple mb-6">
+    ESERCIZIO NUMERO 6
   </h1>
 
-  <div class="container mx-auto bg-white p-6 md:p-8 rounded-2xl shadow text-gray-700 text-center mb-4">
-    <p>
+  <div class="container mx-auto bg-white p-32 rounded-2xl shadow text-center mb-4">
+    <p class="mb-4">
       Questa è una pagina HTML semplice che utilizza Tailwind CSS. <br>
       Qui puoi vedere alcune classi di base: <br>
-    </p>  <br>
+    </p>
 
     <ul class="list-disc list-inside space-y-4 text-left p-32">
       <li><code class="text-blue-500">list-disc</code>: aggiunge i pallini davanti a ogni elemento della lista. Puoi sostituire con <code class="text-blue-500">list-decimal</code> per avere numeri, <code class="text-blue-500">list-none</code> per rimuovere i marker della lista.</li>
@@ -64,10 +51,9 @@
     </ul>
   </div>
 
-  <button class="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+  <button class="px-6 py-2 bg-brand-purple text-white rounded hover:bg-brand-yellow transition">
     Cliccami
   </button>
 
 </body>
-
 </html>
