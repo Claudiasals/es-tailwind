@@ -1,16 +1,13 @@
 import { useState, useEffect } from "react";
 
 const App = () => {
-  // Stato per dark mode
   const [darkMode, setDarkMode] = useState(false);
 
-// Aggiungi o rimuovi la classe "dark" sull'elemento <html> 
-// quando l'utente cambia la modalità dal toggle switch  
-useEffect(() => {
-    // Controlla se c'è una preferenza salvata nel localStorage
+  // Aggiungi o rimuovi la classe "dark" sull'elemento <html> 
+  // quando l'utente cambia la modalità dal toggle switch  
+  useEffect(() => {
     const darkPref = localStorage.getItem("dark-mode");
 
-    // Se c'è una preferenza salvata, applicala
     if (darkPref === "true") {
       setDarkMode(true);
       document.documentElement.classList.add("dark"); // Imposta la modalità scura
@@ -70,7 +67,37 @@ useEffect(() => {
         </button>
       </div>
 
-      <h1 className="text-3xl font-bold text-center mb-8">ESERCIZI 10</h1>
+      <h1 className="text-3xl font-bold text-center mb-8">ESERCIZI 11-12</h1>
+
+      {/* Esercizio 1: Pulsanti con Hover */}
+      <div className="mb-12">
+        <h2 className="text-2xl font-semibold text-center mb-6">Pulsanti con Hover</h2>
+        <div className="flex gap-6 justify-center">
+          <button className="px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-700 transition-colors">Pulsante 1</button>
+          <button className="px-6 py-3 bg-green-500 text-white rounded-md hover:bg-green-700 transition-colors">Pulsante 2</button>
+          <button className="px-6 py-3 bg-red-500 text-white rounded-md hover:bg-red-700 transition-colors">Pulsante 3</button>
+        </div>
+      </div>
+
+      {/* Esercizio 2: Modulo di input con focus e active */}
+      <div className="mb-12">
+        <h2 className="text-2xl font-semibold text-center mb-6">Modulo di Input (Focus e Active)</h2>
+        <div className="flex flex-col gap-4 items-center">
+          <input
+            type="text"
+            placeholder="Nome"
+            className="px-4 py-2 rounded-md border-2 border-gray-300 focus:border-blue-500 dark:focus:border-yellow-300 focus:outline-none active:bg-blue-100 dark:active:bg-blue-700 transition-all"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            className="px-4 py-2 rounded-md border-2 border-gray-300 focus:border-blue-500 dark:focus:border-yellow-300 focus:outline-none active:bg-blue-100 dark:active:bg-blue-700 transition-all"
+          />
+          <button className="px-6 py-3 bg-brand-purple text-white rounded-md hover:bg-brand-blue transition-colors">
+            Invia
+          </button>
+        </div>
+      </div>
 
       {/* Cards */}
       <div className="flex flex-wrap justify-center gap-6 mb-12">
