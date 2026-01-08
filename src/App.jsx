@@ -1,34 +1,97 @@
+import { useState, useEffect } from "react";
+
 const App = () => {
+  // Stato per dark mode
+  const [darkMode, setDarkMode] = useState(false);
+
+// Aggiungi o rimuovi la classe "dark" sull'elemento <html> 
+// quando l'utente cambia la modalità dal toggle switch  
+useEffect(() => {
+    // Controlla se c'è una preferenza salvata nel localStorage
+    const darkPref = localStorage.getItem("dark-mode");
+
+    // Se c'è una preferenza salvata, applicala
+    if (darkPref === "true") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark"); // Imposta la modalità scura
+    } else {
+      setDarkMode(false);
+      document.documentElement.classList.remove("dark"); // Imposta la modalità chiara
+    }
+  }, []); // Vuoto per farlo eseguire solo al primo montaggio
+
+  // Funzione per toggle
+  const toggleDarkMode = () => {
+    setDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      // Salva la preferenza nel localStorage
+      localStorage.setItem("dark-mode", newMode);
+      
+      // Applica o rimuove la classe "dark" in base al nuovo stato
+      if (newMode) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      
+      return newMode;
+    });
+  };
+
   return (
     <main className="bg-white dark:bg-gray-900 min-h-screen flex flex-col items-center justify-start p-8 font-brand text-brand-purple dark:text-brand-yellow">
 
-      <h1 className="text-3xl font-bold text-center mb-8">
-        ESERCIZI 7 e 8
-      </h1>
+      {/* Toggle switch per dark mode */}
+      <div className="flex justify-center items-center mb-8">
+        <label className="relative inline-block w-14 mr-2">
+          <input
+            type="checkbox"
+            className="sr-only"
+            checked={darkMode}
+            onChange={toggleDarkMode}
+          />
+          <span
+            className={`block w-14 h-8 rounded-full ${
+              darkMode ? "bg-blue-500" : "bg-gray-300"
+            }`}
+          >
+            <span
+              className={`absolute top-1 left-1 w-6 h-6 bg-white rounded-full transition-transform ${
+                darkMode ? "transform translate-x-6" : ""
+              }`}
+            ></span>
+          </span>
+        </label>
+        <button
+          onClick={toggleDarkMode}
+          className="ml-2 text-xl font-bold text-white dark:text-gray-800"
+        >
+          {darkMode ? "Light Mode" : "Dark Mode"}
+        </button>
+      </div>
+
+      <h1 className="text-3xl font-bold text-center mb-8">ESERCIZI 10</h1>
 
       {/* Cards */}
       <div className="flex flex-wrap justify-center gap-6 mb-12">
-        {/* Card 1: azzurro pastello */}
         <div className="bg-[#A7C7E7] dark:bg-[#4B6CB7] border-t-4 border-brand-purple dark:border-brand-yellow rounded-lg shadow-lg p-6 w-72 flex flex-col items-center">
-          <h2 className="text-xl font-semibold mb-2">CARD 1</h2>
+          <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">CARD 1</h2>
           <p className="mb-4 text-brand-purple dark:text-brand-yellow text-center">Paragrafo 1</p>
           <button className="px-6 py-2 bg-[#FFD8A7] dark:bg-[#FFB84C] text-brand-blue dark:text-gray-900 font-bold rounded-lg shadow-md hover:bg-[#FFC87C] dark:hover:bg-[#FFA500] transition-colors">
             Pulsante
           </button>
         </div>
 
-        {/* Card 2: arancione pastello */}
         <div className="bg-[#FFD8A7] dark:bg-[#FFB84C] border-t-4 border-brand-purple dark:border-brand-yellow rounded-lg shadow-lg p-6 w-72 flex flex-col items-center">
-          <h2 className="text-xl font-semibold mb-2">CARD 2</h2>
+          <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">CARD 2</h2>
           <p className="mb-4 text-brand-purple dark:text-brand-yellow text-center">Paragrafo 2</p>
           <button className="px-6 py-2 bg-[#A7C7E7] dark:bg-[#4B6CB7] text-brand-blue dark:text-gray-900 font-bold rounded-lg shadow-md hover:bg-[#84B4E0] dark:hover:bg-[#3A4A8B] transition-colors">
             Pulsante
           </button>
         </div>
 
-        {/* Card 3: giallo pastello */}
         <div className="bg-[#FFF5A7] dark:bg-[#FFD700] border-t-4 border-brand-purple dark:border-brand-yellow rounded-lg shadow-lg p-6 w-72 flex flex-col items-center">
-          <h2 className="text-xl font-semibold mb-2">CARD 3</h2>
+          <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">CARD 3</h2>
           <p className="mb-4 text-brand-purple dark:text-brand-yellow text-center">Paragrafo 3</p>
           <button className="px-6 py-2 bg-[#A7C7E7] dark:bg-[#4B6CB7] text-brand-blue dark:text-gray-900 font-bold rounded-lg shadow-md hover:bg-[#84B4E0] dark:hover:bg-[#3A4A8B] transition-colors">
             Pulsante
@@ -38,15 +101,17 @@ const App = () => {
 
       {/* Div di esempio */}
       <div className="bg-white dark:bg-gray-800 w-full max-w-5xl p-16 rounded-2xl shadow-lg text-center text-brand-purple dark:text-brand-yellow">
-        <h1 className="text-xl font-semibold mb-2">DIV DI ESEMPIO</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam temporibus incidunt quisquam minus dolor, fugit eligendi vitae laborum explicabo perferendis excepturi aspernatur fugiat suscipit enim doloribus, fuga cumque at rem.</p>
+        <h1 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">DIV DI ESEMPIO</h1>
+        <p className="text-gray-700 dark:text-gray-200">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam temporibus incidunt quisquam minus dolor, fugit eligendi vitae laborum explicabo perferendis excepturi aspernatur fugiat suscipit enim doloribus, fuga cumque at rem.
+        </p>
         <a href="#" className="text-brand-yellow dark:text-brand-blue font-bold underline hover:text-brand-blue dark:hover:text-brand-purple">
           link cliccabile
         </a>
       </div>
 
     </main>
-  )
-}
+  );
+};
 
 export default App;
