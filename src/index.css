@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@import "./components.css";
+
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #1e40af;
+  --color-brand-yellow: #fcbf49;
+  --color-brand-purple: #9b5de5;
+}

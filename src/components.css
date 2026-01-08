@@ -1,0 +1,24 @@
+@layer components {
+    .btn-brand {
+      @apply px-6 py-2 rounded-lg font-bold
+             bg-brand-blue text-white
+             hover:bg-brand-yellow transition;
+    }
+  
+    .input-brand {
+      @apply px-4 py-2 border-2 rounded-md;
+    }
+  }
+  
+  /*
+In Tailwind:
+
+- Un component è una CLASSE CSS RIUTILIZZABILE
+- Composta da utility Tailwind
+- Definita con @layer components
+
+Una classe semantica (es. .btn, .card, .input)
+che raggruppa più utility Tailwind
+per evitare ripetizioni
+
+  */
