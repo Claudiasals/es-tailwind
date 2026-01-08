@@ -1,31 +1,26 @@
 /** @type {import('tailwindcss').Config} */
-/* il doppio asterisco è uncommento speciale che serve a dare tipo e suggerimenti all’editor. 
-In pratica dice: “Ehi, questo file è un oggetto di configurazione Tailwind”. */
-
 export default {
+    content: [
+      "./index.html",
+      "./src/**/*.{js,ts,jsx,tsx}",
+    ],
     theme: {
-        extend: {
-            colors: {
-                'brand-purple': '#9b5de5', // titoli
-                'brand-blue': '#1e40af',    // testo principale blu scuro
-            },
-            fontFamily: {
-                'brand': ['Poppins', 'sans-serif'], // font personalizzato
-            },
-            spacing: {
-                '32': '8rem',  // p-32 / m-32 come esempio
-            },
+      extend: {
+        colors: {
+          /* Palette personalizzata */
+          "brand-purple": "#9b5de5", // titoli e pulsanti primari
+          "brand-blue": "#1e40af",   // testo principale
+          "brand-yellow": "#fcbf49", // hover / accenti
+          "brand-gray": "#6b7280",   // testo secondario
         },
+        fontFamily: {
+          brand: ["Poppins", "sans-serif"],
+        },
+        spacing: {
+          32: "8rem",
+        },
+      },
     },
     plugins: [],
-}
-
-
-/*
-p-32 → padding su tutti e 4 i lati = 8rem
-m-32 → margin su tutti e 4 i lati = 8rem
-mt-32 → margin-top = 8rem
-mb-32 → margin-bottom = 8rem
-px-32 → padding orizzontale (left + right) = 8rem
-py-32 → padding verticale (top + bottom) = 8rem
-*/
+  }
+  

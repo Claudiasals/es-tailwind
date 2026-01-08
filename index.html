@@ -1,59 +1,12 @@
 <!doctype html>
 <html lang="it">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>es-tailwind</title>
-  <link href="/src/index.css" rel="stylesheet">
-</head>
-
-<body class="bg-white min-h-screen flex flex-col items-center justify-start p-8 font-brand text-brand-blue">
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-
-  <h1 class="text-3xl font-bold underline text-center text-brand-purple mb-6">
-    ESERCIZIO NUMERO 6
-  </h1>
-
-  <div class="container mx-auto bg-white p-32 rounded-2xl shadow text-center mb-4">
-    <p class="mb-4">
-      Questa è una pagina HTML semplice che utilizza Tailwind CSS. <br>
-      Qui puoi vedere alcune classi di base: <br>
-    </p>
-
-    <ul class="list-disc list-inside space-y-4 text-left p-32">
-      <li><code class="text-blue-500">list-disc</code>: aggiunge i pallini davanti a ogni elemento della lista. Puoi sostituire con <code class="text-blue-500">list-decimal</code> per avere numeri, <code class="text-blue-500">list-none</code> per rimuovere i marker della lista.</li>
-      <li><code class="text-blue-500">list-inside</code>: posiziona il marker (pallino o numero) <strong>all’interno</strong> del contenuto della lista, invece che fuori. Puoi usare <code class="text-blue-500">list-outside</code> per farlo stare fuori. Serve per controllare l’allineamento e l’indentazione dei punti.</li>
-      <li><code class="text-blue-500">space-y-4</code>: aggiunge uno spazio verticale tra i vari <code>&lt;li&gt;</code> della lista. 4 significa 1rem = 16px di distanza. Puoi cambiare il numero (es. <code class="text-blue-500">space-y-2</code> = 8px, <code class="text-blue-500">space-y-6</code> = 24px) per aumentare o diminuire lo spazio tra i punti della lista senza usare <code>&lt;br&gt;</code>.</li>
-      <li><code class="text-blue-500">text-center</code>: centra il testo orizzontalmente. Può essere sostituito con <code class="text-blue-500">text-left</code> per allineare a sinistra o <code class="text-blue-500">text-right</code> per allineare a destra.</li>
-      <li><code class="text-blue-500">bg-blue-500</code>: serve a colorare lo sfondo. bg- significa “background”, cioè colore di sfondo. blue-500 indica il colore su una scala da 50 a 900, dove 50 è molto chiaro e 900 è molto scuro. Puoi cambiare il colore sostituendo "blue" con altri colori come <code class="text-blue-500">red-500</code>, <code class="text-blue-500">green-500</code>, ecc., e il numero per intensità (es. 100, 200, … 900).</li>
-      <li><code class="text-blue-500">p-4</code>: p sta per padding, cioè spazio interno tra il contenuto di un elemento e il suo bordo. 4 è la misura secondo la scala di Tailwind ed equivale a 1rem = 16px. Puoi cambiare la misura usando valori da 0 a 10 (es. <code class="text-blue-500">p-2</code> = 8px, <code class="text-blue-500">p-8</code> = 32px) o usare le varianti verticali <code class="text-blue-500">py-4</code> e orizzontali <code class="text-blue-500">px-4</code>.</li>
-      <li><code class="text-blue-500">bg-white</code>: imposta lo sfondo bianco. Puoi cambiare colore come per bg-blue-500, usando altri colori o intensità diverse.</li>
-      <li><code class="text-blue-500">rounded</code>: arrotonda gli angoli. Puoi cambiare l’intensità con valori come <code class="text-blue-500">rounded-sm</code> (piccolo), <code class="text-blue-500">rounded-lg</code> (medio), <code class="text-blue-500">rounded-xl</code>, <code class="text-blue-500">rounded-2xl</code> (molto arrotondato), o <code class="text-blue-500">rounded-full</code> per renderlo completamente tondo.</li>
-      <li><code class="text-blue-500">shadow</code>: aggiunge una leggera ombra sotto l’elemento. Puoi scegliere diverse intensità: <code class="text-blue-500">shadow-sm</code>, <code class="text-blue-500">shadow-md</code>, <code class="text-blue-500">shadow-lg</code>, fino a <code class="text-blue-500">shadow-2xl</code>.</li>
-      <li><code class="text-blue-500">text-gray-700</code>: colore del testo grigio scuro. Come per bg-, puoi cambiare il colore e l’intensità: <code class="text-blue-500">text-gray-500</code>, <code class="text-blue-500">text-red-600</code>, ecc.</li>
-      <li><code class="text-blue-500">max-w-xl</code>: imposta la larghezza massima dell’elemento. Puoi sostituire xl con altri valori: <code class="text-blue-500">max-w-sm</code>, <code class="text-blue-500">max-w-lg</code>, <code class="text-blue-500">max-w-2xl</code> fino a 7xl e infine max-w-full per utilizzare il 100% della larghezza disponibile.</li>
-      <li><code class="text-blue-500">mb-4</code>: margin-bottom = 1rem = 16px. Puoi cambiare il valore da 0 a 10, es. <code class="text-blue-500">mb-2</code> = 8px, <code class="text-blue-500">mb-6</code> = 24px.</li>
-      <li><code class="text-blue-500">mb-6</code> (titolo): margin-bottom di 1,5rem = 24px. Puoi cambiare come mb-4 ecc.</li>
-      <li><code class="text-blue-500">min-h-screen</code>: altezza minima pari a tutta la schermata. Puoi cambiare in <code class="text-blue-500">h-screen</code> per altezza fissa, o <code class="text-blue-500">min-h-[500px]</code> per valori personalizzati.</li>
-      <li><code class="text-blue-500">flex</code>: imposta il container come flexbox. Puoi combinare con altre classi: <code class="text-blue-500">inline-flex</code>, <code class="text-blue-500">flex-row</code>, <code class="text-blue-500">flex-col</code>.</li>
-      <li><code class="text-blue-500">flex-col</code>: disposizione verticale dei figli. Puoi cambiare con <code class="text-blue-500">flex-row</code> per orizzontale.</li>
-      <li><code class="text-blue-500">items-center</code>: centra gli elementi figli orizzontalmente. Altre opzioni: <code class="text-blue-500">items-start</code>, <code class="text-blue-500">items-end</code>, <code class="text-blue-500">items-stretch</code>.</li>
-      <li><code class="text-blue-500">justify-start</code>: allinea gli elementi all’inizio verticalmente. Altre opzioni: <code class="text-blue-500">justify-center</code>, <code class="text-blue-500">justify-end</code>, <code class="text-blue-500">justify-between</code>, <code class="text-blue-500">justify-around</code>.</li>
-      <li><code class="text-blue-500">p-8</code>: padding di 2rem = 32px su tutti i lati. Puoi cambiare i valori da 0 a 10 come per p-4.</li>
-      <li><code class="text-blue-500">px-6</code>: padding orizzontale 1,5rem = 24px.</li>
-      <li><code class="text-blue-500">py-2</code>: padding verticale 0,5rem = 8px.</li>
-      <li><code class="text-blue-500">text-white</code>: colore del testo bianco. Puoi cambiare in qualsiasi colore come text-black, text-red-500, ecc.</li>
-      <li><code class="text-blue-500">hover:bg-blue-600</code>: cambia lo sfondo al passaggio del mouse. Puoi personalizzare colore e intensità come hover:bg-red-500, hover:bg-green-600, ecc.</li>
-      <li><code class="text-blue-500">transition</code>: rende l’animazione graduale. Puoi combinare con altre classi come transition-colors, transition-all, transition-transform per effetti diversi.</li>
-    </ul>
-  </div>
-
-  <button class="px-6 py-2 bg-brand-purple text-white rounded hover:bg-brand-yellow transition">
-    Cliccami
-  </button>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>es-tailwind</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
