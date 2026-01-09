@@ -41,10 +41,10 @@ const App = () => {
         <h2 className="text-3xl font-bold mb-6 text-center">Portfolio</h2>
 
         <div className="mb-8">
-          {/* Flex con flex-wrap */}
-          <div className="flex flex-wrap gap-6 justify-center">
+          {/* Grid con responsive columns */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-center">
             {/* Card 1 */}
-            <div className="card w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+            <div className="card">
               <img src={image1} alt="Ritratto 1" className="w-full h-48 object-cover" />
               <div className="p-4 flex flex-col flex-1 bg-white">
                 <h3 className="card-title">Ritratti</h3>
@@ -52,7 +52,7 @@ const App = () => {
               </div>
             </div>
             {/* Card 2 */}
-            <div className="card w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+            <div className="card">
               <img src={image2} alt="Ritratto 2" className="w-full h-48 object-cover" />
               <div className="p-4 flex flex-col flex-1 bg-white">
                 <h3 className="card-title">Ritratti</h3>
@@ -60,7 +60,7 @@ const App = () => {
               </div>
             </div>
             {/* Card 3 */}
-            <div className="card w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+            <div className="card">
               <img src={image3} alt="Ritratto 3" className="w-full h-48 object-cover" />
               <div className="p-4 flex flex-col flex-1 bg-white">
                 <h3 className="card-title">Ritratti</h3>
