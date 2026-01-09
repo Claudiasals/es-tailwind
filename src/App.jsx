@@ -20,58 +20,61 @@ const App = () => {
   return (
     <main className="font-sans text-[var(--color-black)] bg-[var(--color-white)] min-h-screen">
 
-    {/* Navbar */}
-    <nav className="flex justify-between items-center py-1 px-6 border-b-2 border-[var(--color-verdolight)]">
-      <div className="text-2xl font-bold">LOGO</div>
-      <div className="flex gap-4">
-        <button className="btn-navbar">Home</button>
-        <button className="btn-navbar">Gallery</button>
-        <button className="btn-navbar">Chi Sono</button>
-        <button className="btn-navbar">Contatti</button>
-      </div>
-    </nav>
+      {/* Navbar */}
+      <nav className="flex justify-between items-center py-2 px-6 border-b-2 border-[var(--color-verdolight)]">
+        <div className="text-2xl font-bold">LOGO</div>
+        <div className="flex gap-4 space-x-6 md:space-x-10">
+          <button className="btn-navbar">Home</button>
+          <button className="btn-navbar">Gallery</button>
+          <button className="btn-navbar">Chi Sono</button>
+          <button className="btn-navbar">Contatti</button>
+        </div>
+      </nav>
 
-    {/* Copertina */}
-    <section className="h-80 md:h-96">
-      <img src={cover} alt="Copertina" className="w-full h-full object-cover" />
-    </section>
+      {/* Copertina */}
+      <section className="h-80 md:h-96">
+        <img src={cover} alt="Copertina" className="w-full h-full object-cover" />
+      </section>
 
-    {/* Portfolio */}
-    <section className="p-8">
-      <h2 className="text-3xl font-bold mb-6 text-center">Portfolio</h2>
+      {/* Portfolio */}
+      <section className="p-8">
+        <h2 className="text-3xl font-bold mb-6 text-center">Portfolio</h2>
 
-      <div className="mb-8">
-        {/* Usando flex-wrap per far andare le card su più righe se lo schermo è piccolo */}
-        <div className="flex flex-wrap gap-6 justify-center">
-          <div className="card w-60">
-            <img src={image1} alt="Ritratto 1" className="w-full h-48 object-cover" />
-            <div className="p-4 flex flex-col flex-1 bg-white">
-              <h3 className="card-title">Ritratti</h3>
-              <p className="card-desc">Una raccolta di ritratti emozionanti e artistici.</p>
+        <div className="mb-8">
+          {/* Flex con flex-wrap */}
+          <div className="flex flex-wrap gap-6 justify-center">
+            {/* Card 1 */}
+            <div className="card w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+              <img src={image1} alt="Ritratto 1" className="w-full h-48 object-cover" />
+              <div className="p-4 flex flex-col flex-1 bg-white">
+                <h3 className="card-title">Ritratti</h3>
+                <p className="card-desc">Una raccolta di ritratti emozionanti e artistici.</p>
+              </div>
             </div>
-          </div>
-          <div className="card w-60">
-            <img src={image2} alt="Ritratto 2" className="w-full h-48 object-cover" />
-            <div className="p-4 flex flex-col flex-1 bg-white">
-              <h3 className="card-title">Ritratti</h3>
-              <p className="card-desc">Scatti intimi e professionali.</p>
+            {/* Card 2 */}
+            <div className="card w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+              <img src={image2} alt="Ritratto 2" className="w-full h-48 object-cover" />
+              <div className="p-4 flex flex-col flex-1 bg-white">
+                <h3 className="card-title">Ritratti</h3>
+                <p className="card-desc">Scatti intimi e professionali.</p>
+              </div>
             </div>
-          </div>
-          <div className="card w-60">
-            <img src={image3} alt="Ritratto 3" className="w-full h-48 object-cover" />
-            <div className="p-4 flex flex-col flex-1 bg-white">
-              <h3 className="card-title">Ritratti</h3>
-              <p className="card-desc">Momenti catturati con eleganza.</p>
+            {/* Card 3 */}
+            <div className="card w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+              <img src={image3} alt="Ritratto 3" className="w-full h-48 object-cover" />
+              <div className="p-4 flex flex-col flex-1 bg-white">
+                <h3 className="card-title">Ritratti</h3>
+                <p className="card-desc">Momenti catturati con eleganza.</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* Footer */}
-    <footer className="p-6 text-center text-sm text-white bg-[var(--color-verdolight)]">
-      © 2026 Tutti i diritti riservati
-    </footer>
+      {/* Footer */}
+      <footer className="p-6 text-center text-sm text-white bg-[var(--color-verdolight)]">
+        © 2026 Tutti i diritti riservati
+      </footer>
 
     </main>
   );
