@@ -23,11 +23,18 @@ const App = () => {
       {/* Navbar */}
       <nav className="flex justify-between items-center py-2 px-6 border-b-2 border-[var(--color-verdolight)]">
         <div className="text-2xl font-bold">LOGO</div>
-        <div className="flex gap-4 space-x-6 md:space-x-10">
+
+        {/* Menu orizzontale visibile su schermi medi e più grandi */}
+        <div className="hidden md:flex gap-4 space-x-6 md:space-x-10">
           <button className="btn-navbar">Home</button>
           <button className="btn-navbar">Gallery</button>
           <button className="btn-navbar">Chi Sono</button>
           <button className="btn-navbar">Contatti</button>
+        </div>
+
+        {/* Menu hamburger visibile solo su schermi piccoli */}
+        <div className="flex md:hidden items-center">
+          <button className="btn-navbar">☰</button>
         </div>
       </nav>
 
