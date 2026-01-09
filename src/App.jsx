@@ -21,7 +21,7 @@ const App = () => {
     <main className="font-sans text-[var(--color-black)] bg-[var(--color-white)] min-h-screen">
 
       {/* Navbar */}
-      <nav className="flex justify-between items-center py-1 px-6 border-b-2 border-[var(--color-verdolight)]">
+      <nav className="flex justify-between items-center py-1 px-6  ">
         <div className="text-2xl font-bold">LOGO</div>
         <div className="flex gap-4">
           <button className="btn-navbar">Home</button>
