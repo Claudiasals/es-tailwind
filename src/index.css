@@ -1,8 +1,9 @@
 @import "tailwindcss";
+
 @import "./components.css";
 
 /* Palette personalizzata */
-@theme {
+@layer {
   --color-verdoscuro: #1E431D;
   --color-verdolight: #8CA576;
   --color-beige-light: #D8D1C1;
