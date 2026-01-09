@@ -1,24 +1,44 @@
 @layer components {
-    .btn-brand {
-      @apply px-6 py-2 rounded-lg font-bold
-             bg-brand-blue text-white
-             hover:bg-brand-yellow transition;
+    /* Pulsanti principali */
+    .btn {
+      @apply px-6 py-2 font-bold
+             text-white
+             bg-[var(--color-verdoscuro)]
+             hover:bg-[var(--color-verdolight)]
+             rounded-2xl
+             transition;
     }
   
-    .input-brand {
-      @apply px-4 py-2 border-2 rounded-md;
+    /* Pulsanti navbar */
+    .btn-navbar {
+      @apply px-4 py-2 font-semibold
+             text-[var(--color-verdoscuro)] /* verde scuro */
+             bg-white /* sfondo bianco */
+             hover:text-[var(--color-verdolight)] /* verde chiaro al passaggio */
+             rounded-2xl
+             transition;
+    }
+  
+    /* Card per foto e album cliccabili */
+    .card {
+      @apply flex flex-col shadow-md rounded-3xl overflow-hidden bg-white
+             cursor-pointer
+             transition-all duration-300 ease-in-out;
+    }
+  
+    /* Hover effect per card cliccabile */
+    .card:hover {
+      @apply scale-105 shadow-2xl;
+    }
+  
+    /* Titolo della card */
+    .card-title {
+      @apply text-[var(--color-verdoscuro)] text-xl font-bold mb-2 text-center;
+    }
+  
+    /* Descrizione della card */
+    .card-desc {
+      @apply text-black text-sm mb-4 text-center;
     }
   }
   
-  /*
-In Tailwind:
-
-- Un component è una CLASSE CSS RIUTILIZZABILE
-- Composta da utility Tailwind
-- Definita con @layer components
-
-Una classe semantica (es. .btn, .card, .input)
-che raggruppa più utility Tailwind
-per evitare ripetizioni
-
-  */
